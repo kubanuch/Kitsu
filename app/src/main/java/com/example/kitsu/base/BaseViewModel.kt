@@ -2,11 +2,15 @@ package com.example.kitsu.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import androidx.paging.map
 import com.example.kitsu.presentation.ui.state.UIState
 import com.example.kitsu.domain.either.Either
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel() {

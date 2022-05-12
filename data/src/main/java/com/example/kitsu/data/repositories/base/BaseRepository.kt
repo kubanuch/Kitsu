@@ -21,5 +21,4 @@ abstract class BaseRepository {
         Log.e("BaseRepository", this@BaseRepository.javaClass.name, exception)
         emit(Either.Left(value = exception.localizedMessage ?: "Error Occurred"))
     }
-
 }

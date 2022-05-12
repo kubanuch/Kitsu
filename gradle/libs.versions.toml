@@ -48,10 +48,17 @@ firebasePlatform = "29.2.0"
 glide = "4.13.0"
 #Koin
 koin = "3.2.0-beta-1"
+#coordinatorlayout
+coordinatorlayout = "1.1.0"
+
+
 [libraries]
 
 #Kotlin
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+#coordinatorlayout
+coordinatorlayout-coordinatorlayout = { module = "androidx.coordinatorlayout:coordinatorlayout", version.ref = "coordinatorlayout" }
 
 #Coroutines
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }

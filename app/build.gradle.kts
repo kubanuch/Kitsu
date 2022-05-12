@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.cli.jvm.main
+
 plugins {
 
     // Application
@@ -67,12 +69,18 @@ dependencies {
 
     // Lifecycle
     implementation(libs.bundles.lifecycle)
+    // Paging
+    implementation(libs.paging.paging)
+
 
     // Navigation
     implementation(libs.bundles.navigation)
+    //CoordinatorLayout
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
 
     // Hilt
     implementation(libs.hilt.android)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt(libs.hilt.compiler)
 
 }

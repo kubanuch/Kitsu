@@ -1,6 +1,6 @@
 package com.example.kitsu.di
 
-import com.example.kitsu.data.remote.RetrofitClient
+import com.example.kitsu.data.remote.network.RetrofitClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,13 +11,24 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-
-
+    @Provides
     @Singleton
-    private val retrofit = RetrofitClient()
+    fun providesAnimeApiService(retrofitClient: RetrofitClient) =
+        retrofitClient.provideAnimeApiService()
+
 
     @Provides
     @Singleton
-    fun providesApiService() = retrofit.providePixaBayApiService()
+    fun providesMangaApiService(retrofitClient: RetrofitClient) =
+        retrofitClient.provideMangaApiService()
 
+    @Provides
+    @Singleton
+    fun providesAuthentication(retrofitClient: RetrofitClient.AuthenticationClient) =
+        retrofitClient.provideAuthenticationApiService()
+
+    @Provides
+    @Singleton
+    fun providesGenresApiService(retrofitClient: RetrofitClient) =
+        retrofitClient.provideGenresApiService()
 }

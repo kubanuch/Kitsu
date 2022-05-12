@@ -24,7 +24,7 @@ android {
             )
         }
         debug {
-            buildConfigField("String", "MAIN_BASE_URL", "\"https://pixabay.com/api/\"")
+            buildConfigField("String", "MAIN_BASE_URL", "\"https://kitsu.io/api/edge/\"")
         }
     }
     compileOptions {
@@ -47,6 +47,8 @@ dependencies {
 
     // OkHttp
     implementation(libs.bundles.okHttp)
+    // Paging
+    implementation(libs.paging.paging)
 
     // Room with coroutines
     implementation(libs.bundles.room)
