@@ -17,6 +17,9 @@ import kotlinx.coroutines.launch
 abstract class BaseFragment<B : ViewBinding, V : BaseViewModel>(
     @LayoutRes layoutId: Int,
 ) : Fragment(layoutId) {
+    // how to
+    // inchet ontahtoaih
+    //jfgosjfo
 
     protected abstract val binding: B
     protected abstract val viewModel: V
