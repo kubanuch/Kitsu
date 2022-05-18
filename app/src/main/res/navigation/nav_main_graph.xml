@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph.xml"
+    app:startDestination="@id/animeFragment">
+    <fragment
+        android:id="@+id/animeFragment"
+        android:name="com.example.kitsu.presentation.ui.fragment.main.anime.AnimeFragment"
+        android:label="fragment_heroes"
+        tools:layout="@layout/fragment_anime">
+        <action
+            android:id="@+id/action_animeFragment_to_kitsuDetailFragment"
+            app:destination="@id/kitsuDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaFragment"
+        android:name="com.example.kitsu.presentation.ui.fragment.main.manga.MangaFragment"
+        android:label="fragment_manga"
+        tools:layout="@layout/fragment_manga" >
+        <action
+            android:id="@+id/action_mangaFragment_to_kitsuDetailFragment"
+            app:destination="@id/kitsuDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/kitsuDetailFragment"
+        android:name="com.example.kitsu.presentation.ui.fragment.main.detail.KitsuDetailFragment"
+        android:label="fragment_anime_detail"
+        tools:layout="@layout/fragment_anime_detail">
+        <argument
+            android:name="animeId"
+            app:argType="string" />
+
+        <argument
+            android:name="videoId"
+            app:argType="string" />
+
+        <argument
+            android:name="isAnime"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="id"
+            android:defaultValue="1"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

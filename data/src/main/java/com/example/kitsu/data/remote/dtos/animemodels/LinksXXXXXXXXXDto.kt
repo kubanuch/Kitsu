@@ -1,0 +1,17 @@
+package com.example.kitsu.data.remote.dtos.animemodels
+
+
+import com.example.kitsu.domain.models.animemodels.LinksXXXXXXXXX
+import com.google.gson.annotations.SerializedName
+
+data class LinksXXXXXXXXXDto(
+    @SerializedName("related")
+    val related: String,
+    @SerializedName("self")
+    val self: String
+)
+
+fun LinksXXXXXXXXXDto.toDomain() = LinksXXXXXXXXX(
+    related,
+    self
+)

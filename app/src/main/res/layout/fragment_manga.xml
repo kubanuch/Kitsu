@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.fragment.main.manga.MangaFragment">
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:text="Top Publishing Manga"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/recyclerview_manga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvt_text_one"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
+        android:drawableEnd="@drawable/ic_baseline"
+        android:gravity="center"
+        android:text="View All"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/recyclerview_manga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_manga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/tvt_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_text"
+        app:spanCount="2"
+        tools:listitem="@layout/item_manga" />
+
+    <TextView
+        android:id="@+id/tvt_text"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:gravity="start"
+        android:text="Highest Rated manga"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/recyclerview_popular_manga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_manga" />
+
+    <TextView
+        android:id="@+id/tvt_text_two"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
+        android:drawableEnd="@drawable/ic_baseline"
+        android:gravity="center"
+        android:text="View All"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/recyclerview_popular_manga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_manga"
+        tools:ignore="RtlCompat" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_popular_manga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvt_text"
+        app:spanCount="2"
+        tools:listitem="@layout/item_manga" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
