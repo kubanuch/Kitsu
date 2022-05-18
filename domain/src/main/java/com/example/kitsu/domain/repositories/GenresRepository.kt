@@ -6,5 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface GenresRepository {
 
-    fun fetchGenres(id: String): Flow<Either<String, GenresList>>
+    fun fetchGenresAnime(id: String): Flow<Either<String, GenresList>>
+    fun fetchGenresManga(id: String): Flow<Either<String, GenresList>>
 }

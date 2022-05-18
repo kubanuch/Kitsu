@@ -26,38 +26,43 @@ class KitsuDetailFragment : BaseFragment<FragmentAnimeDetailBinding, KitsuDetail
     private val genresAdapter = GenresAdapter()
     private val args: KitsuDetailFragmentArgs by navArgs()
 
-
-    override fun launchObservers() {
+    override fun setupViews() {
         setupGenresAdapter()
-        getData()
-        subscribeToGenres()
     }
-    override fun setupRequests() {
-        if (args.isAnime) {
-            viewModel.fetchAnimeId(args.animeId)
-            viewModel.fetchGenres(args.id)
-        } else {
-            viewModel.fetchMangaId(args.id)
-        }
-
-    }
-
-
 
     private fun setupGenresAdapter() {
         binding.recyclerview.adapter = genresAdapter
     }
 
+    override fun setupRequests() {
+        if (args.isAnime) {
+            viewModel.fetchAnimeId(args.animeId)
+            viewModel.fetchGenresAnime(args.animeId)
+        } else {
+            viewModel.fetchMangaId(args.id)
+            viewModel.fetchGenresManga(args.id)
+        }
+    }
+
+    override fun launchObservers() {
+        getData()
+        subscribeToGenres()
+    }
+
     private fun subscribeToGenres() {
         if (args.isAnime) {
             viewModel.detailStateGenres.spectateUiState(
-                error = {},
+                error = {
+                    Log.e("anime", it)
+                },
                 success = {
                     genresAdapter.submitList(it.data)
                 })
         } else {
             viewModel.detailStateGenres.spectateUiState(
-                error = {},
+                error = {
+                    Log.e("manga", it)
+                },
                 success = {
                     genresAdapter.submitList(it.data)
                 })

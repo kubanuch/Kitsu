@@ -7,7 +7,7 @@ data class LinksModelDto(
     @SerializedName("last")
     val last: String?,
     @SerializedName("first")
-    val first: String,
+    val first: String?,
 )
 
 fun LinksModelDto.toDomain() = LinksModel(last, first)

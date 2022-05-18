@@ -2,7 +2,8 @@ package com.example.kitsu.presentation.ui.fragment.main.detail
 
 import com.example.kitsu.base.BaseViewModel
 import com.example.kitsu.domain.usecases.AnimeIdUseCase
-import com.example.kitsu.domain.usecases.GenresUseCase
+import com.example.kitsu.domain.usecases.GenresAnimeUseCase
+import com.example.kitsu.domain.usecases.GenresMangaUseCase
 import com.example.kitsu.domain.usecases.MangaIdUseCase
 import com.example.kitsu.presentation.models.detailmodels.DetailAnimeResponseUi
 import com.example.kitsu.presentation.models.detailmodels.DetailMangaResponseUi
@@ -17,7 +18,8 @@ import javax.inject.Inject
 class KitsuDetailViewModel @Inject constructor(
     private val useCaseAnime: AnimeIdUseCase,
     private val useCaseManga: MangaIdUseCase,
-    private val useCaseGenres: GenresUseCase,
+    private val useCaseGenresAnime: GenresAnimeUseCase,
+    private val useCaseGenresManga: GenresMangaUseCase
 ) : BaseViewModel() {
 
     private val _detailState = mutableUIStateFlow<DetailAnimeResponseUi>()
@@ -42,7 +44,10 @@ class KitsuDetailViewModel @Inject constructor(
         }
     }
 
-    fun fetchGenres(id: String) =
-        useCaseGenres.invoke(id).collectRequest(_detailStateGenres) { it.toUi() }
+    fun fetchGenresAnime(id: String) =
+        useCaseGenresAnime.invoke(id).collectRequest(_detailStateGenres) { it.toUi() }
+
+    fun fetchGenresManga(id: String) =
+        useCaseGenresManga.invoke(id).collectRequest(_detailStateGenres) { it.toUi() }
 }
 

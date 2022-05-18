@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class AttributesModelsDto(
     @SerializedName("createAt")
-    val createAt: String,
+    val createAt: String?,
     @SerializedName("name")
     val name: String,
     @SerializedName("description")
@@ -13,7 +13,7 @@ data class AttributesModelsDto(
     @SerializedName("slug")
     val slug: String,
     @SerializedName("updateAt")
-    val updateAt: String,
+    val updateAt: String?,
 )
 
 fun AttributesModelsDto.toDomain() = AttributesModels(

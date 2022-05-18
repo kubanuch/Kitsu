@@ -9,7 +9,12 @@ import javax.inject.Inject
 class GenresRepositoryImpl @Inject constructor(
     private val service: GenresApiService
 ) : BaseRepository(), GenresRepository {
-    override fun fetchGenres(id: String) = doRequest {
-        service.fetchGenres(id).toDomain()
+
+    override fun fetchGenresAnime(id: String) = doRequest {
+        service.fetchGenresAnime(id).toDomain()
+    }
+
+    override fun fetchGenresManga(id: String) = doRequest {
+        service.fetchGenresManga(id).toDomain()
     }
 }

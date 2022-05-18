@@ -4,7 +4,7 @@ import com.example.kitsu.domain.models.genresmodels.LinksModel
 
 data class LinksModelUi(
     val last: String?,
-    val first: String,
+    val first: String?,
 )
 
 fun LinksModel.toUi() = LinksModelUi(
